@@ -4,12 +4,19 @@
     "scripts": {
         "client": "cd client && yarn start",
         "server": "nodemon server.js",
-        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+        "start": "node server.js",
+        "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
     },
     "dependencies": {
-        "express": "^4.16.2"
+        "connected-react-router": "^4.5.0",
+        "express": "^4.16.2",
+        "prop-types": "^15.6.2",
+        "react-redux": "^5.0.7",
+        "sanitize.styl": "^3.3.0",
+        "serve": "^10.0.2"
     },
     "devDependencies": {
         "concurrently": "^3.5.0"
     }
-  }
+}
